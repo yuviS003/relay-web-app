@@ -2836,3 +2836,11 @@ button.compact { padding: 0.36rem 0.6rem; font-size: 0.76rem; }
 .netFacts > div { display: flex; justify-content: space-between; gap: 0.6rem; }
 .netFacts dt { color: var(--muted); font-size: 0.74rem; }
 .netFacts dd { margin: 0; font-family: var(--mono); font-size: 0.74rem; }
+
+/* The descriptor beside the product name on the sign-in panel. */
+.brandNote {
+  padding-left: 0.55rem;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.78rem;
+}

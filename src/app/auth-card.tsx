@@ -408,9 +408,13 @@ export function AuthCard({
         {/* Hidden below 52rem: on a phone the form is the only thing worth
             the vertical space. */}
         <aside className="authPitch">
+          {/* The product is Relay everywhere else — the window title, the
+              manifest, the toolbar. The sign-in panel called itself "Web API
+              client", which is the description, not the name. */}
           <span className="brand">
             <Logo size={26} />
-            <h1>Web API client</h1>
+            <h1>Relay</h1>
+            <span className="brandNote">Web API client</span>
           </span>
           <h2 style={{ marginTop: '1.6rem' }}>What makes it different</h2>
           <ul>
@@ -431,7 +435,8 @@ export function AuthCard({
             </li>
             <li>
               <strong>Copy as code</strong>
-              cURL, fetch, Python or HTTPie, quoted so pasting it is safe.
+              cURL, fetch, Go, Java, Rust and a dozen more, with variables
+              resolved and values quoted so pasting is safe.
             </li>
           </ul>
         </aside>
