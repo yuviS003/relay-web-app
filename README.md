@@ -5,7 +5,14 @@ encrypted secrets, sandboxed pre-request scripts, and response analysis — SEO
 grading, structured extraction, a non-destructive security audit, and a
 one-click report that runs them together.
 
-Runs locally with no accounts. Deploys to Vercel Hobby with MongoDB Atlas Free.
+Runs locally with no accounts. Deployed on Vercel Hobby with MongoDB Atlas
+Free:
+
+- **Live:** https://relay-web-app-sigma.vercel.app
+- **Source:** https://github.com/yuviS003/relay-web-app
+
+The live instance runs in account mode: browsing and sending work as a guest
+under a smaller quota, and an account is needed only to save work.
 
 ## Why this is not just a form with a fetch call
 
@@ -133,7 +140,20 @@ Register, for each provider you enable:
 ```
 <origin>/api/auth/oauth/google/callback
 <origin>/api/auth/oauth/github/callback
-``` Collections and environments are scoped
+```
+
+For the deployment above that means:
+
+```
+https://relay-web-app-sigma.vercel.app/api/auth/oauth/google/callback
+https://relay-web-app-sigma.vercel.app/api/auth/oauth/github/callback
+```
+
+Google accepts a list, so the localhost entry can stay alongside it. A GitHub
+OAuth app holds a single callback URL, so local development needs its own app
+rather than editing this one. Note also that a passkey is bound to the origin
+it was registered on: one created against localhost will not work on the
+deployed domain. Collections and environments are scoped
 per owner: the store is constructed *for* an owner and has no unscoped read, so
 a forgotten check cannot leak another user's work.
 
