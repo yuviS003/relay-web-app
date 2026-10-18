@@ -1,0 +1,31 @@
+{
+  /*
+   * A tiny emit for the command-line collection runner.
+   *
+   * The CLI has to run under plain node, and node cannot load the application's
+   * TypeScript or resolve its "@/" paths. Rather than keep a second copy of the
+   * run logic in JavaScript — which would drift from the one the browser uses
+   * and from its tests — the runner and the two pure modules it needs are
+   * emitted to CommonJS here and imported by scripts/run-collection.mjs.
+   */
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": false,
+    "sourceMap": false,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2022",
+    "outDir": ".cli-build",
+    "rootDir": "src",
+    "types": ["node"],
+    "jsx": "preserve",
+    "lib": ["es2023"]
+  },
+  "include": [
+    "src/lib/runner/**/*.ts",
+    "src/lib/json-path.ts",
+    "src/lib/placeholders.ts",
+    "src/lib/store/types.ts"
+  ]
+}

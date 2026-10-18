@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Relay web API client</title>
+  <desc id="desc">A request passing through a guarded relay.</desc>
+  <defs>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b6ff5c"/>
+      <stop offset="1" stop-color="#55d9ff"/>
+    </linearGradient>
+    <radialGradient id="surface" cx="70%" cy="10%" r="110%">
+      <stop offset="0" stop-color="#202a3c"/>
+      <stop offset="1" stop-color="#080b12"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="1" y="1" width="62" height="62" rx="15" fill="url(#surface)" stroke="#29354d" stroke-width="2"/>
+
+  <!-- Request path. -->
+  <path d="M11 32h42" fill="none" stroke="#55d9ff" stroke-width="2.5" stroke-linecap="round" opacity=".72"/>
+  <circle cx="11" cy="32" r="5.5" fill="#0f1420" stroke="#55d9ff" stroke-width="2.5"/>
+  <circle cx="53" cy="32" r="5.5" fill="#0f1420" stroke="#b6ff5c" stroke-width="2.5"/>
+
+  <!-- Guard in the middle, deliberately larger so it survives at 16px. -->
+  <path d="M32 13l12 5.5v11.8c0 10-6.7 16.5-12 19-5.3-2.5-12-9-12-19V18.5z" fill="url(#shield)" stroke="#080b12" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M26.3 31.2l4 4 7.8-8.3" fill="none" stroke="#071008" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
